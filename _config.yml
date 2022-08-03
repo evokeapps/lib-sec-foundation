@@ -1,0 +1,8 @@
+title: Liberty Security Foundation
+description: Your awesome website description
+baseurl: ''
+url: 'https://libertyinfosec.com'
+plugins:
+  - jekyll-seo-tag
+sass:
+  sass_dir: assets/css

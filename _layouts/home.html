@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<div class="bg-dark header-bg d-flex align-items-center">
+    <div class="container">
+        <div class="row py-5">
+            <div class="col text-start">
+                <div class="display-3 fw-bold mb-2 text-success">{{page.headline}}</div>
+                <div class="fs-4 text-white mb-5">{{page.subhead}}</div>
+                <div class="mb-5">
+                    <a href="#start" class="btn btn-light fw-bold me-2 text-uppercase">Get started</a>
+                    <a href="#start" class="btn btn-text text-white fw-bold text-uppercase">Learn More</a>
+                </div>
+            </div>
+            <div class="col">
+                <img src="{{'assets/img/company.jpeg' | relative_url}}" class="img-fluid shadow-lg rounded">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row py-5">
+        {% for item in page.statistics %}
+        <div class="col">
+            <div class="p-5 text-center shadow-sm">
+                <div class="fs-1">{{item.number}}</div>
+                <div class="fs-4">{{item.title}}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
