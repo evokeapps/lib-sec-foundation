@@ -1,15 +1,15 @@
 ---
 layout: default
 ---
-<div class="bg-dark header-bg d-flex align-items-center">
+<div class="bg-primary header-bg d-flex align-items-center mb-5">
     <div class="container">
-        <div class="row py-5">
+        <div class="row py-5 d-flex align-items-center">
             <div class="col text-start">
-                <div class="display-3 fw-bold mb-2 text-success">{{page.headline}}</div>
-                <div class="fs-4 text-white mb-5">{{page.subhead}}</div>
+                <div class="display-3 fw-bold mb-4 text-light">{{page.headline}}</div>
+                <div class="fs-4 text-light mb-5">{{page.subhead}}</div>
                 <div class="mb-5">
                     <a href="#start" class="btn btn-light fw-bold me-2 text-uppercase">Get started</a>
-                    <a href="#start" class="btn btn-text text-white fw-bold text-uppercase">Learn More</a>
+                    <a href="#start" class="btn btn-text text-accent fw-bold text-uppercase">Learn More</a>
                 </div>
             </div>
             <div class="col">
@@ -19,14 +19,52 @@ layout: default
     </div>
 </div>
 <div class="container">
-    <div class="row py-5">
+    <div class="row mb-5">
+        <div class="col fs-4 text-center">{{page.about}}</div>
+    </div>
+    <div class="row g-5 row-cols-1 row-cols-md-3 mb-5">
         {% for item in page.statistics %}
         <div class="col">
-            <div class="p-5 text-center shadow-sm">
-                <div class="fs-1">{{item.number}}</div>
-                <div class="fs-4">{{item.title}}</div>
+            <div class="p-5 text-center shadow-sm bg-light bg-gradient">
+                <div class="fs-1 text-dark">{{item.number}}</div>
+                <div class="fs-5 text-primary fw-bold">{{item.title}}</div>
             </div>
         </div>
         {% endfor %}
+    </div>
+    <div class="row mb-5 d-flex align-items-center">
+        <div class="col">
+            <div class="fs-5 fw-bold text-accent">Services</div>
+            <div class="fs-1 text-primary">We help you to</div>
+        </div>
+        <div class="col">
+            <div class="fs-6">{{page.services-description}}</div>
+        </div>
+    </div>
+    <div class="row mb-5 row-cols-1 row-cols-md-2 row-cols-lg-4">
+        {% for feature in page.features %}
+        <div class="col">
+            <div class="p-5 text-center border h-100">
+                <div class="fs-4 fw-bold text-primary">{{feature.title}}</div>
+                <div class="fs-6 text-muted">{{feature.description}}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="bg-dark mb-5">
+    <div class="container">
+        <div class="row py-5">
+            <div class="col">
+                <div class="fs-3 fw-bold text-accent">About Us</div>
+                <div class="text-light">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                    doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                    architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+                    aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
+                    nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+                    velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+                    voluptatem.</div>
+            </div>
+        </div>
     </div>
 </div>
