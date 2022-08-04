@@ -11,7 +11,7 @@ layout: default
     </div>
     <div class="row mb-5">
         <div class="col text-center">
-            <img src="{{ 'assets/img/company.jpeg' | relative_url }}" class="rounded img-fluid w-50 shadow">
+            <img src="{{ 'assets/img/company.jpeg' | relative_url }}" class="rounded img-fluid shadow">
         </div>
     </div>
     <div class="row g-5 row-cols-1 row-cols-md-2 row-cols-lg-4">
@@ -31,7 +31,7 @@ layout: default
                 <div class="fs-2 text-light">We provide all kinds of services from A to B</div>
             </div>
         </div>
-        <div class="row">
+        <div class="row g-3 row-cols-1 row-cols-lg-3">
             {% for service in page.services %}
             <div class="col">
                 <div class="bg-light rounded bg-gradient shadow p-5 text-center">
@@ -48,24 +48,18 @@ layout: default
     </div>
 </div>
 <div class="container">
-    <div class="row mb-3">
-        <div class="col text-start">
+    <div class="row row-cols-1 row-cols-lg-2 g-3 mb-5">
+        <div class="col text-center text-md-start">
             <div class="fs-5 text-success fw-bold">About Us</div>
-            <div class="fs-2 text-dark">Why we are the best</div>
-        </div>
-    </div>
-    <div class="row mb-5 d-flex align-items-center">
-        <div class="col">
+            <div class="fs-2 mb-5 text-dark">Why we are the best</div>
             <div class="fs-6 mb-5">{{page.about}}</div>
             <div class="mb-5">
-                <a href="/start" class="btn btn-success btn-rounded me-3">Get a Quote</a>
-                <a href="/start" class="btn btn-outline-warning btn-rounded">Talk to an agent</a>
+                <a href="/start" class="btn btn-success btn-lg btn-rounded me-3">Get a Quote</a>
+                <a href="/start" class="btn btn-outline-warning btn-lg btn-rounded">Talk to an agent</a>
             </div>
-            <img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                class="img-fluid">
         </div>
         <div class="col text-center">
-            <img src="https://images.pexels.com/photos/2182863/pexels-photo-2182863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            <img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 class="img-fluid rounded shadow">
         </div>
     </div>
@@ -75,7 +69,7 @@ layout: default
             <div class="fs-2">Learn more about what we do</div>
         </div>
     </div>
-    <div class="row mb-5">
+    <div class="row mb-5 row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
         {% for post in site.posts %}
         <div class="col">
             <div class="p-4 rounded border position-relative">
@@ -101,7 +95,7 @@ layout: default
             <div class="fs-2">What our clients say about their experience</div>
         </div>
     </div>
-    <div class="row mb-5">
+    <div class="row mb-5 row-cols-1 row-cols-lg-3 g-3">
         {% for item in page.testimonials %}
         <div class="col">
             <div class="p-4 rounded border">
@@ -122,7 +116,7 @@ layout: default
     <div class="container p-5">
         <div class="row">
             <div class="col">
-                <div class="fs-4 text-warning fw-bold mb-5">Get in touch with us.</div>
+                <div class="fs-1 text-warning fw-bold mb-5">Get in touch with us.</div>
                 <div class="row">
                     <div class="col">
                         <div class="text-light">
