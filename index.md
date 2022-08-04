@@ -30,5 +30,7 @@ services-description:
   vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
   sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
 
-about: Liberty Sercurity Foundation is the security partner that companies turn to for end-to-end solutions that attack the chaos of the cybersecurity landscape with context.
+about:
+  Liberty Sercurity Foundation is the security partner that companies turn to for end-to-end solutions that attack the chaos of the cybersecurity landscape with context. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+  sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
 ---

@@ -2,5 +2,11 @@
 ---
 
 .header-bg {
-  min-height: 80vh;
+  background-image: url('../img/header-bg.jpeg');
+  background-position: top;
+  background-size: cover;
+}
+.header-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  min-height: 75vh;
 }
