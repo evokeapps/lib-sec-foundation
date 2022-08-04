@@ -1,94 +1,156 @@
 ---
 layout: default
 ---
-<div class="header-bg">
-    <div class="header-overlay d-flex align-items-center mb-5">
-        <div class="container">
-            <div class="row py-5 d-flex align-items-center g-5">
-                <div class="co text-center text-md-start">
-                    <div class="display-3 fw-bold mb-4 text-accent">{{page.headline}}</div>
-                    <div class="fs-4 text-light mb-5">{{page.subhead}}</div>
-                    <div class="mb-5">
-                        <a href="#start" class="btn btn-light fw-bold me-2 text-uppercase">Get started</a>
-                        <a href="#start" class="btn btn-text text-accent fw-bold text-uppercase">Learn More</a>
-                    </div>
-                </div>
-            </div>
+<div class="container mb-5">
+    <div class="row py-5 mb-5">
+        <div class="col text-center">
+            <div class="display-1 mb-5 fw-bold">{{page.title}}</div>
+            <div class="fs-5 text-muted mb-5">{{page.subtitle}}</div>
+            <a href="/contact" class="btn btn-warning fw-bold btn-lg btn-rounded text-dark">Get a quote</a>
         </div>
     </div>
-</div>
-<div class="container mb-5">
     <div class="row mb-5">
-        <div class="col fs-5 text-center">{{page.summary}}</div>
+        <div class="col text-center">
+            <img src="{{ 'assets/img/company.jpeg' | relative_url }}" class="rounded img-fluid w-50 shadow">
+        </div>
     </div>
-    <div class="row g-2 row-cols-1 row-cols-md-3 mb-5">
-        {% for item in page.statistics %}
-        <div class="col">
-            <div class="p-5 text-center border">
-                <div class="fs-1 text-dark">{{item.number}}</div>
-                <div class="fs-5 text-primary fw-bold">{{item.title}}</div>
-            </div>
+    <div class="row g-5 row-cols-1 row-cols-md-2 row-cols-lg-4">
+        {% for stat in page.stats %}
+        <div class="col text-center">
+            <div class="fs-1">{{stat.value}}</div>
+            <div class="fs-4 text-muted">{{stat.title}}</div>
         </div>
         {% endfor %}
     </div>
-    <div class="row g-2 mb-5 d-flex align-items-center">
-        <div class="col-12 col-md-6 text-center text-md-start">
-            <div class="fs-4 fw-bold text-accent">Services</div>
-            <div class="fs-5 text-primary">Only Coalfire brings the cloud expertise, technology, and innovative
-                approaches that empower your organization to capitalize on the promise of digital transformation.</div>
-        </div>
-        <div class="col-12 col-md-6 text-center text-md-start">
-            <div class="fs-6 text-muted">{{page.services-description}}</div>
-        </div>
-    </div>
 </div>
-<div class="bg-primary mb-5">
+<div class="bg-success bg-gradient py-5 mb-5">
     <div class="container">
-        <div class="row g-2 py-5 d-flex align-items-center">
-            <div class="col-12 col-lg-6 text-center">
-                <img src="{{'assets/img/company.jpeg' | relative_url}}"
-                    class="img-fluid rounded shadow-sm border border-5 w-75">
+        <div class="row mb-5">
+            <div class="col text-center">
+                <div class="fs-5 text-light fw-bold">Our services</div>
+                <div class="fs-2 text-light">We provide all kinds of services from A to B</div>
             </div>
-            <div class="col-12 col-lg-6 text-center text-lg-start">
-                <div class="fs-3 text-accent">About Us</div>
-                <div class="fs-5 text-light">{{page.about}}</div>
+        </div>
+        <div class="row">
+            {% for service in page.services %}
+            <div class="col">
+                <div class="bg-light rounded bg-gradient shadow p-5 text-center">
+                    <div class="fs-4 fw-bold">
+                        {{service.title}}
+                    </div>
+                    <div class="fs-6">
+                        {{service.description}}
+                    </div>
+                </div>
             </div>
+            {% endfor %}
         </div>
     </div>
 </div>
 <div class="container">
-    <div class="row g-2 mb-5 row-cols-1 row-cols-md-2 row-cols-lg-4">
-        {% for feature in page.features %}
+    <div class="row mb-3">
+        <div class="col text-start">
+            <div class="fs-5 text-success fw-bold">About Us</div>
+            <div class="fs-2 text-dark">Why we are the best</div>
+        </div>
+    </div>
+    <div class="row mb-5 d-flex align-items-center">
         <div class="col">
-            <div class="p-5 text-center border h-100">
-                <div class="fs-4 fw-bold text-primary">{{feature.title}}</div>
-                <div class="fs-6 text-muted">{{feature.description}}</div>
+            <div class="fs-6 mb-5">{{page.about}}</div>
+            <div class="mb-5">
+                <a href="/start" class="btn btn-success btn-rounded me-3">Get a Quote</a>
+                <a href="/start" class="btn btn-outline-warning btn-rounded">Talk to an agent</a>
+            </div>
+            <img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                class="img-fluid">
+        </div>
+        <div class="col text-center">
+            <img src="https://images.pexels.com/photos/2182863/pexels-photo-2182863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                class="img-fluid rounded shadow">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <div class="fs-5 text-success fw-bold">Blog</div>
+            <div class="fs-2">Learn more about what we do</div>
+        </div>
+    </div>
+    <div class="row mb-5">
+        {% for post in site.posts %}
+        <div class="col">
+            <div class="p-4 rounded border position-relative">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-journal-text" viewBox="0 0 16 16">
+                    <path
+                        d="M5 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
+                    <path
+                        d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                    <path
+                        d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+                </svg>
+                <div class="fs-5 fw-bold">{{post.title}}</div>
+                <div class="fs-6">{{post.date | date: '%B %d, %Y'}}</div>
+                <a href="{{post.url | permalink}}" class="stretched-link"></a>
             </div>
         </div>
         {% endfor %}
     </div>
-<<<<<<< Updated upstream
-=======
+    <div class="row mb-3">
+        <div class="col">
+            <div class="fs-5 text-success fw-bold">Testimonials</div>
+            <div class="fs-2">What our clients say about their experience</div>
+        </div>
+    </div>
+    <div class="row mb-5">
+        {% for item in page.testimonials %}
+        <div class="col">
+            <div class="p-4 rounded border">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-quote"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z" />
+                </svg>
+                <div class="fs-6 text-muted fw-bold">{{item.title}}</div>
+                <div class="fs-6 text-dark">{{item.comment}}</div>
+                <small class="fw-bold text-warning">{{item.client}}</small>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
-<div class="bg-dark mb-5">
-    <div class="container">
-        <div class="row py-5">
+<div class="bg-dark">
+    <div class="container p-5">
+        <div class="row">
             <div class="col">
-                <div class="fs-3 fw-bold text-accent">About Us</div>
-                <div class="text-light">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                    doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                    architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-                    aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
-                    nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-                    velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-                    voluptatem.</div>
+                <div class="fs-4 text-warning fw-bold mb-5">Get in touch with us.</div>
+                <div class="row">
+                    <div class="col">
+                        <div class="text-light">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                class="mb-3" viewBox="0 0 16 16">
+                                <path
+                                    d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                            </svg>
+                            <div class="fs-5 fw-bold">Phone</div>
+                            <div class="fs-6">(202) 505-3759</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="text-light">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                class="mb-3" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+                            </svg>
+                            <div class="fs-5 fw-bold">Email</div>
+                            <div class="fs-6">(202) 505-3759</div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col">
-                <div class="fs-5 mb-2 p-1 fw-bold bg-accent rounded">BE A PART OF SOMETHING BIGGER.</div>
-                <div class="text-light">When tackling our customer’s most complex security challenges, Avertium
-                    operates as a unit. We rise, inspire, and achieve as a team.</div>
+
             </div>
         </div>
     </div>
->>>>>>> Stashed changes
 </div>

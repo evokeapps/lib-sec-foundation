@@ -1,7 +1,8 @@
 title: Liberty Security Foundation
-description: Your awesome website description
+email: hello@libertyinfosec.com
+description: A short description of your site
 baseurl: ''
-url: 'https://libertyinfosec.com'
+url: 'libertyinfosec.com'
 plugins:
   - jekyll-seo-tag
 sass:
